@@ -96,7 +96,7 @@ fn the_committed_profiles_drivers_have_their_defects() {
             }
             Some(DriverId::MESA_RADV) => vec![NAN_COPIES, PREPROCESS, TEN_BIT_WORDS],
             Some(DriverId::INTEL_OPEN_SOURCE_MESA) => vec![COMPRESSION, COUNTS, STALE_PUSHES],
-            Some(DriverId::NVIDIA_PROPRIETARY) if desc.device_id == 0x2c19 => {
+            Some(DriverId::NVIDIA_PROPRIETARY) if desc.canonical_device_id() == 0x2c19 => {
                 vec![TEN_BIT_WORDS, UNPINNABLE]
             }
             Some(DriverId::NVIDIA_PROPRIETARY) => vec![STENCIL_COPIES, TEN_BIT_WORDS, UNPINNABLE],
